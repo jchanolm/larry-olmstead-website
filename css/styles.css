@@ -215,22 +215,26 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
     margin-bottom: 3rem;
 }
 
 .process-image {
-    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
     height: 350px;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
-    font-weight: 600;
-    text-align: center;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    border: 3px solid #f8f8f8;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.process-image .speaking-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .process-steps {
@@ -564,18 +568,21 @@ body {
 }
 
 .contact-image {
-    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-    height: 200px;
+    height: 280px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
-    font-weight: 600;
-    text-align: center;
-    font-size: 0.9rem;
     margin-bottom: 2rem;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.contact-image .group-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .contact-info h3 {
