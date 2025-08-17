@@ -4,8 +4,12 @@
 let slideIndex = 1;
 showSlide(slideIndex);
 
-function currentSlide(n) {
-    showSlide(slideIndex = n);
+function moveCarousel(n) {
+    showSlide(slideIndex += n);
+}
+
+function goToSlide(n) {
+    showSlide(slideIndex = n + 1);
 }
 
 function showSlide(n) {
@@ -26,12 +30,6 @@ function showSlide(n) {
     slides[slideIndex-1].classList.add("active");
     dots[slideIndex-1].classList.add("active");
 }
-
-// Auto-advance carousel
-setInterval(function() {
-    slideIndex++;
-    showSlide(slideIndex);
-}, 5000);
 
 // Modal Functions
 function openModal(modalId) {

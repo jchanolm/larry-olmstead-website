@@ -166,12 +166,12 @@ body {
 
 .logo-item {
     background: #f8f8f8;
-    padding: 1.2rem 2rem;
+    padding: 2rem 3rem;
     border-radius: 8px;
     font-weight: 600;
     color: #5a4a3a;
-    min-width: 140px;
-    height: 80px;
+    min-width: 250px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,7 +184,7 @@ body {
 
 .logo-item .client-logo {
     max-width: 100%;
-    max-height: 50px;
+    max-height: 80px;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -288,6 +288,7 @@ body {
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+    white-space: nowrap; /* Prevent line wrapping */
 }
 
 .step-content p {
@@ -356,6 +357,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    white-space: nowrap; /* Prevent line wrapping */
 }
 
 .service-icon {
@@ -368,6 +370,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1rem;
+    flex-shrink: 0;
 }
 
 .service-bullets {
@@ -521,6 +524,15 @@ body {
     font-size: 0.8rem;
     text-align: center;
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+.testimonial-logo-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 .testimonial-meta {
@@ -545,6 +557,39 @@ body {
     font-style: italic;
     line-height: 1.6;
     text-align: left;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: 2px solid #5a4a3a;
+    color: #5a4a3a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.carousel-nav:hover {
+    background: #5a4a3a;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav.prev {
+    left: -60px;
+}
+
+.carousel-nav.next {
+    right: -60px;
 }
 
 .carousel-dots {
@@ -783,6 +828,42 @@ body {
         grid-template-columns: 1fr;
     }
 
+    /* Allow wrapping on mobile for service taglines */
+    .service-tagline {
+        white-space: normal;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    /* Allow wrapping on mobile for step content */
+    .step-content h3 {
+        white-space: normal;
+    }
+
+    /* Mobile carousel adjustments */
+    .testimonial {
+        padding: 2rem 1rem;
+    }
+
+    .testimonial-text {
+        font-size: 1.1rem;
+    }
+
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .carousel-nav.prev {
+        left: -20px;
+    }
+
+    .carousel-nav.next {
+        right: -20px;
+    }
+
     .logos-grid {
         gap: 1.5rem;
     }
@@ -828,13 +909,6 @@ body {
 
     .testimonial-text {
         font-size: 1.1rem;
-    }
-
-    .service-tagline {
-        font-size: 1.2rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
     }
 
     .process-steps {
