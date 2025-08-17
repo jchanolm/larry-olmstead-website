@@ -288,7 +288,7 @@ body {
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
-    white-space: nowrap; /* Prevent line wrapping */
+    line-height: 1.3;
 }
 
 .step-content p {
@@ -342,6 +342,9 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 4px solid #5a4a3a;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -350,14 +353,17 @@ body {
 }
 
 .service-tagline {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     color: #5a4a3a;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-weight: 700;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.8rem;
-    white-space: nowrap; /* Prevent line wrapping */
+    line-height: 1.3;
+    min-height: 3.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .service-icon {
@@ -376,6 +382,7 @@ body {
 .service-bullets {
     list-style: none;
     margin-bottom: 1.5rem;
+    flex: 1;
 }
 
 .service-bullets li {
@@ -401,6 +408,7 @@ body {
     font-size: 0.95rem;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s ease;
+    margin-top: auto;
 }
 
 .learn-more-link:hover {
@@ -424,7 +432,7 @@ body {
     border-top: 4px solid #5a4a3a;
     display: flex;
     flex-direction: column;
-    min-height: 400px;
+    height: 100%;
 }
 
 .case-study-card:hover {
@@ -457,6 +465,10 @@ body {
     margin-bottom: 1rem;
     font-size: 1.2rem;
     font-weight: 600;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    min-height: 2.6rem;
 }
 
 .case-study-card p {
@@ -828,17 +840,20 @@ body {
         grid-template-columns: 1fr;
     }
 
-    /* Allow wrapping on mobile for service taglines */
+    /* Allow proper wrapping on mobile */
     .service-tagline {
-        white-space: normal;
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+        min-height: auto;
     }
 
-    /* Allow wrapping on mobile for step content */
     .step-content h3 {
-        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .case-study-card h4 {
+        min-height: auto;
     }
 
     /* Mobile carousel adjustments */
